@@ -33,6 +33,16 @@ public class JdbcDaoImpl {
 		String sql = "SELECT COUNT(*) circle" ;
 		return  jdbcTemplate.queryForObject(sql, Integer.class);
 	}
+	
+	public String getcircleName(int circleId) {
+		String sql = "Select name from circle Where id = ?";
+		return jdbcTemplate.queryForObject(sql, new Object[] { circleId } , String.class);
+	}
+	
+//	public Circle getCircleForId (int circleId) {
+//		String sql = "Select * from circle where id = ?";
+//		return jdbcTemplate.queryForObject(sql, new Object [] {circleId }, )
+//	}
 
 	public Circle getCircle(int circleId) {
 	
