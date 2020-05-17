@@ -22,6 +22,7 @@ public class Circle {
 		setId(circleId);
 		setName(name);
 	}
+	public Circle() {}
 	
 
 }
