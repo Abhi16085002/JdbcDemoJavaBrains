@@ -38,7 +38,7 @@ public class JdbcDaoImpl {
 	}
 	
 	public int getCircleCount() {
-		String sql = "SELECT COUNT(*) circle" ;
+		String sql = "SELECT COUNT(*) FROM circle" ;
 		return  jdbcTemplate.queryForObject(sql, Integer.class);
 	}
 	

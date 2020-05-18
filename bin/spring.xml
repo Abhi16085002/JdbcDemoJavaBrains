@@ -11,7 +11,7 @@
        <context:annotation-config/>
        <context:component-scan base-package="org.koushik.javabrains"></context:component-scan>
        
-        <bean id ="datasource" class= "org.apache.commons.dbcp2.BasicDataSource">
+        <bean id ="dataSource" class= "org.apache.commons.dbcp2.BasicDataSource">
 <!-- 			  <property name="driverClassName" value="com.mysql.jdbc.Driver" /> -->
 			  <property name="url" value="jdbc:mysql://localhost:3306/mytestdb" />
 			  <property name="username" value="root" />
@@ -19,6 +19,10 @@
 			  <property name="initialSize" value="2" />
 			  <property name="maxTotal" value="5" />
 			  
+		</bean>
+		
+		<bean id="simpleJdbcDaoImpl" class="org.koushik.javabrains.dao.SimpleJdbcDaoImpl" >
+			<property name="dataSource" ref="dataSource" />
 		</bean>
        
        
